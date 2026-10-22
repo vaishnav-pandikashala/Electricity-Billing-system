@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Electricity Bills | Electricity Billing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top navigation -->
+    <header class="topbar">
+        <a class="brand" href="dashboard.html">
+            ⚡ Electricity Billing
+        </a>
+        <button class="btn secondary" type="button" onclick="logout()">
+            Logout
+        </button>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="customers.html">Customers</a>
+            <a class="active" href="bills.html">Electricity Bills</a>
+        </aside>
+
+        <!-- Main content -->
+        <main class="content">
+
+            <h1>Electricity Bills</h1>
+
+            <!-- Generate bill form -->
+            <section class="panel">
+                <h2>Generate New Bill</h2>
+
+                <form id="billForm">
+
+                    <div class="form-grid">
+
+                        <div>
+                            <label for="billCustomerId">Customer *</label>
+                            <select id="billCustomerId"
+                                    name="customerId"
+                                    required>
+                                <option value="">
+                                    Loading customers...
+                                </option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="units">Units Consumed *</label>
+                            <input type="number"
+                                   id="units"
+                                   name="units"
+                                   min="1"
+                                   max="1000000"
+                                   step="1"
+                                   required>
+                        </div>
+
+                        <div>
+                            <label for="month">Billing Month *</label>
+                            <input type="month"
+                                   id="month"
+                                   name="month"
+                                   required>
+                        </div>
+
+                    </div>
+
+                    <p class="hint">
+                        Sample tariff: ₹3/unit for the first 100 units,
+                        ₹5/unit for the next 100 units, and ₹7/unit
+                        thereafter. This is a demo calculation, not an
+                        official tariff.
+                    </p>
+
+                    <div class="actions">
+                        <button class="btn" type="submit">
+                            Generate Bill
+                        </button>
+                    </div>
+
+                    <p id="billMessage" role="status"></p>
+
+                </form>
+            </section>
+
+            <!-- Bill records -->
+            <section class="panel">
+
+                <div class="section-heading">
+                    <h2>Bill Records</h2>
+
+                    <input type="search"
+                           id="billSearch"
+                           placeholder="Search bills..."
+                           aria-label="Search bills">
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Bill ID</th>
+                                <th>Customer</th>
+                                <th>Meter</th>
+                                <th>Units</th>
+                                <th>Month</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="billRows">
+                            <tr>
+                                <td colspan="8">Loading bills...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

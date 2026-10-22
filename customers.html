@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customers | Electricity Billing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="dashboard.html">⚡ Electricity Billing</a>
+        <button class="btn secondary" onclick="logout()">Logout</button>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <a href="dashboard.html">Dashboard</a>
+            <a class="active" href="customers.html">Customers</a>
+            <a href="bills.html">Electricity Bills</a>
+        </aside>
+
+        <main class="content">
+            <h1>Customer Management</h1>
+
+            <section class="panel">
+                <h2 id="customerFormTitle">Add Customer</h2>
+                <form id="customerForm">
+                    <input type="hidden" id="customerId" name="id">
+
+                    <div class="form-grid">
+                        <div>
+                            <label for="name">Full Name *</label>
+                            <input id="name" name="name" required maxlength="100">
+                        </div>
+                        <div>
+                            <label for="meterNumber">Meter Number *</label>
+                            <input id="meterNumber" name="meterNumber"
+                                   required maxlength="50">
+                        </div>
+                        <div>
+                            <label for="phone">Phone</label>
+                            <input id="phone" name="phone" maxlength="20">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" maxlength="100">
+                        </div>
+                        <div class="wide">
+                            <label for="address">Address *</label>
+                            <input id="address" name="address" required maxlength="255">
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn" type="submit">Save Customer</button>
+                        <button class="btn secondary" type="button"
+                                onclick="resetCustomerForm()">Clear</button>
+                    </div>
+                    <p id="customerMessage" role="status"></p>
+                </form>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <h2>Customer Records</h2>
+                    <input id="customerSearch" placeholder="Search customers...">
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th><th>Name</th><th>Meter No.</th>
+                                <th>Phone</th><th>Email</th><th>Address</th><th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customerRows">
+                            <tr><td colspan="7">Loading customers...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

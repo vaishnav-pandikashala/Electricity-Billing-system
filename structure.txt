@@ -1,0 +1,60 @@
+
+ElectricityBillingSystem/
+│
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── electricity/
+│       │           ├── DBConnection.java
+│       │           ├── AuthServlet.java
+│       │           ├── AuthFilter.java
+│       │           ├── Customer.java
+│       │           ├── CustomerServlet.java
+│       │           ├── BillServlet.java
+│       │           └── DashboardServlet.java
+│       │
+│       └── webapp/
+│           ├── index.html
+│           ├── login.html
+│           ├── dashboard.html
+│           ├── customers.html
+│           ├── bills.html
+│           ├── style.css
+│           ├── app.js
+│           │
+│           └── WEB-INF/
+│               └── web.xml
+│
+├── pom.xml
+├── README.md
+├── .gitignore
+└── target/
+    └── ElectricityBillingSystem.war
+
+
+database MySQL
+
+
+Database: electricity_billing_new
+
+Tables:
+    1. admin
+       - id
+       - username
+       - password
+
+    2. customer
+       - id
+       - name
+       - meter_number
+       - address
+       - created_at
+
+    3. bills
+       - id
+       - customer_id
+       - units
+       - amount
+       - bill_date
+

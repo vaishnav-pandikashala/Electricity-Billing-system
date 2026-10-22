@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Electricity Billing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="dashboard.html">⚡ Electricity Billing</a>
+        <button class="btn secondary" onclick="logout()">Logout</button>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <a class="active" href="dashboard.html">Dashboard</a>
+            <a href="customers.html">Customers</a>
+            <a href="bills.html">Electricity Bills</a>
+        </aside>
+
+        <main class="content">
+            <h1>Dashboard</h1>
+            <p>Welcome to the Electricity Billing System.</p>
+
+            <section class="stats">
+                <article class="stat-card">
+                    <span>Total Customers</span>
+                    <strong id="customerCount">0</strong>
+                </article>
+                <article class="stat-card">
+                    <span>Total Bills</span>
+                    <strong id="billCount">0</strong>
+                </article>
+                <article class="stat-card">
+                    <span>Amount Paid</span>
+                    <strong id="paidAmount">₹0.00</strong>
+                </article>
+                <article class="stat-card">
+                    <span>Amount Unpaid</span>
+                    <strong id="unpaidAmount">₹0.00</strong>
+                </article>
+            </section>
+
+            <section class="panel">
+                <h2>Quick Actions</h2>
+                <div class="actions">
+                    <a class="btn" href="customers.html">Manage Customers</a>
+                    <a class="btn" href="bills.html">Manage Bills</a>
+                </div>
+                <p id="dashboardError" class="error"></p>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

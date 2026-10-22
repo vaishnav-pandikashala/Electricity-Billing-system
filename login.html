@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+    <main class="login-card">
+        <div class="logo">⚡</div>
+        <h1>Admin Login</h1>
+        <p>Sign in to manage electricity billing.</p>
+
+        <p id="errorMessage" class="error" hidden>
+            Invalid username or password.
+        </p>
+
+        <form action="login" method="post">
+            <label for="username">Username</label>
+            <input id="username" name="username" required autocomplete="username">
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password"
+                   required autocomplete="current-password">
+
+            <button class="btn full" type="submit">Login</button>
+        </form>
+
+        <a class="back-link" href="index.html">← Back to home</a>
+    </main>
+
+    <script>
+        if (new URLSearchParams(location.search).has("error")) {
+            document.getElementById("errorMessage").hidden = false;
+        }
+    </script>
+</body>
+</html>
